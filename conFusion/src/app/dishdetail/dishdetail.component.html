@@ -28,12 +28,13 @@
   </div>
 
   <div fxFlex="40">
-    <h2>Comments</h2>
+    <h2>Comments.....</h2>
    
- 
+  
    
-      <div *ngFor="let commentList of dish.comments">
-        
+      <div *ngFor="let commentList of dish.comments">   
+
+         
         <span >{{commentList.comment}}</span> <br>
         <span >{{commentList.rating}}</span> Stars <br>
         <span >--  {{commentList.author}}</span> {{ commentList.date | date }}  <br><br><br><br>
