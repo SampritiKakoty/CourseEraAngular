@@ -15,7 +15,7 @@ export const DISHES: Dish[] = [
             {
                 rating: 5,
                 comment: 'Imagine all the eatables, living in conFusion!',
-                author: 'John Lemon',
+                author: 'Jjohn Lemon',
                 date: '2012-10-16T17:57:28.556094Z'
             },
             {
