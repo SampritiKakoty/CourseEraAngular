@@ -31,12 +31,6 @@ export class ContactComponent implements OnInit {
       message: ''
     });
   }
-/*
-    this.feedbackForm.valueChanges
-      .subscribe(data => this.onValueChanged(data));
-
-    this.onValueChanged(); // (re)set validation messages now
-  }
 
   formErrors = {
     'firstname': '',
@@ -65,28 +59,29 @@ export class ContactComponent implements OnInit {
       'email':         'Email not in valid format.'
     },
   };
-*/
 onSubmit() {
   this.feedback = this.feedbackForm.value;
   console.log(this.feedback);
-  this.feedbackForm.reset({
-    firstname: '',
-    lastname: '',
-    telnum: '',
-    email: '',
+
+
+  this.feedbackForm = this.fb.group({
+    firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
+    lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
+    telnum: ['', [Validators.required, Validators.pattern] ],
+    email: ['', [Validators.required, Validators.email] ],
     agree: false,
     contacttype: 'None',
     message: ''
   });
+
+
   this.feedbackFormDirective.resetForm();
 }
 
- /*   
-  onValueChanged(data?: any) {
+   onValueChanged(data?: any) {
     if (!this.feedbackForm) { return; }
     const form = this.feedbackForm;
     for (const field in this.formErrors) {
-
       if (this.formErrors.hasOwnProperty(field)) {
         // clear previous error message (if any)
         this.formErrors[field] = '';
@@ -102,6 +97,4 @@ onSubmit() {
       }
     }
   }
-
-*/
 }
