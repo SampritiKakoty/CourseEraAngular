@@ -6,11 +6,15 @@ import { Promotion } from '../shared/promotion';
 import { PromotionService } from '../services/promotion.service';
 import { LeaderService } from '../services/leader.service';
 import { Leader } from '../shared/leader';
+import { flyInOut, expand ,visibility} from '../animations/app.animation';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    visibility() ,flyInOut() , expand() 
+  ]
 })
 export class HomeComponent implements OnInit {
 
